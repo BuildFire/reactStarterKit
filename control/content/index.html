@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<!-- Load helper.css to use our helper classes.
+	<link href="../../../../styles/helper.css" rel="stylesheet">
+	-->
+	
+	<!-- JS -->
+	<script src="../../../../scripts/buildfire.js"></script>
+
+</head>
+<body>
+    <span>title <input type="text" id="title" onkeyup="save()"></span>
+</body>
+<script>
+    function save(){
+        var obj = {
+            title: document.getElementById("title").value
+        };
+        buildfire.datastore.save(obj, '', function(){
+            console.warn('saving data');
+        });
+    }
+
+    buildfire.datastore.get(function(err, obj){
+        document.getElementById("title").value = (obj.data.title) ? obj.data.title : "todo";
+    })
+</script>
+</html>
