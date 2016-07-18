@@ -1,4 +1,4 @@
-# angular2StarterKit
+# reactStarterKit
 BuildFire Plugin developed in React. This is a work in progress.
 
 # Credits
